@@ -9,14 +9,16 @@ import java.util.ArrayList;
  */
 public class Graph {
 
-	
+
 	public static ArrayList<Edge>[] adjacencyList=null;
+	public static int[] inEdgeCount=null;
 	public int noOfVertices;
-	
-	
+
+
 	public Graph(int noOfVertices)
 	{
 		adjacencyList=(ArrayList<Edge>[])new ArrayList[noOfVertices+1];
+		inEdgeCount=new int[noOfVertices+1];
 		this.noOfVertices=noOfVertices;
 	}
 
@@ -33,7 +35,7 @@ public class Graph {
 			adjacencyList[u]=new ArrayList<Edge>();
 		adjacencyList[u].add(new Edge(u, v, w));
 	}
-	
+
 	/**
 	 * 
 	 * @param u
@@ -52,9 +54,10 @@ public class Graph {
 				indexToBeRemoved=i;
 			}
 		}
-		edgeList.remove(indexToBeRemoved);
+		if(indexToBeRemoved!=-1)
+			edgeList.remove(indexToBeRemoved);
 	}
-	
+
 	/**
 	 * 
 	 * @param u
@@ -65,7 +68,7 @@ public class Graph {
 	{
 		return adjacencyList[u];
 	}
-	
+
 	/**
 	 * 
 	 * @param u
@@ -85,7 +88,41 @@ public class Graph {
 		}
 		return weight;
 	}
-	
+
+	/**
+	 * To return the array of adjacency list(Actually the graph)
+	 * @return
+	 */
+	public ArrayList<Edge>[] getListOfAdjacencylist()
+	{
+		return adjacencyList;
+	}
+
+	/**
+	 * To return the count of incoming edges for each vertices in an array
+	 * @return
+	 */
+	public int[] getInEdgesCount()
+	{
+		for(int i=1;i<=noOfVertices;i++)
+		{
+			for(int j=1;j<=adjacencyList.length;j++)
+			{
+				ArrayList<Edge> list=adjacencyList[j];
+				for(Edge e : list)
+				{
+					if(e.v==i)
+						inEdgeCount[i]++;
+				}
+			}
+
+		}
+		return inEdgeCount;
+	}
+
+	/**
+	 * To Print the Graph
+	 */
 	public void printGraph()
 	{
 		ArrayList<Edge> edgeList;
@@ -112,9 +149,9 @@ public class Graph {
 		graph.addEdge(2, 3, 7);
 		graph.addEdge(3, 2, 7);
 		graph.printGraph();
-		
+
 	}
-	
-	
+
+
 
 }
