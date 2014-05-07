@@ -18,6 +18,11 @@ public class Graph {
 	public Graph(int noOfVertices)
 	{
 		adjacencyList=(ArrayList<Edge>[])new ArrayList[noOfVertices+1];
+		//TO initialize with empty arrayList
+		for(int i=1;i<=noOfVertices;i++)
+		{
+			adjacencyList[i]=new ArrayList<Edge>();
+		}
 		inEdgeCount=new int[noOfVertices+1];
 		this.noOfVertices=noOfVertices;
 	}
@@ -106,7 +111,7 @@ public class Graph {
 	{
 		for(int i=1;i<=noOfVertices;i++)
 		{
-			for(int j=1;j<=adjacencyList.length;j++)
+			for(int j=1;j<adjacencyList.length;j++)
 			{
 				ArrayList<Edge> list=adjacencyList[j];
 				for(Edge e : list)
