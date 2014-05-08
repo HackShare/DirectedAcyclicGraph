@@ -144,7 +144,6 @@ public class Graph {
 	 * Main function to test the graph
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		Graph graph=new Graph(3);
 		graph.addEdge(1, 2, 5);
@@ -156,7 +155,4 @@ public class Graph {
 		graph.printGraph();
 
 	}
-
-
-
 }
