@@ -18,18 +18,29 @@ following code snippet shows how to get the topological order,
 	dagShortestPath.findShortestPath();
 
 ###Input
-	3 3
-	1 2 1
-	2 3 2
-	1 3 3
+	8 9
+	1 4 1
+	1 5 2
+	2 4 3
+	3 5 4
+	3 8 5
+	4 6 6
+	4 7 7
+	4 8 8
+	5 7 9
 
 First integer is the total number of vertices |V| in the graph G. The next integer is the number of edges |E| in the graph.
 Next |E| lines has the edges information (u, v, w). All inputs must be given through terminal.
 
 ###Output
-	 Distance for 1 is 0
-	 Distance for 2 is 1
-	 Distance for 3 is 3
+	Distance for 1 is 0
+	Distance for 2 is 0
+	Distance for 3 is 0
+	Distance for 4 is 1
+	Distance for 5 is 2
+	Distance for 6 is 7
+	Distance for 7 is 8
+	Distance for 8 is 5
   
 ##Project Contributor
 
