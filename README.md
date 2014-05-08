@@ -12,7 +12,7 @@ follow a sequence of edges that eventually loops back to v again
 ##Install
 
 This library has the java implementation of directed acyclic graph (DAG) shortest path algorithm to find the shortest path in a DAG G=[V,E].The 
-following code snippet shows how to get the topological order,
+following code snippet shows how to get the shortest path,
 
     DAGShortestPath dagShortestPath=new DAGShortestPath();
 	dagShortestPath.findShortestPath();
